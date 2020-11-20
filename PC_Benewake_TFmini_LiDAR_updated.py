@@ -29,7 +29,7 @@ while(True):
         timeC = time.strftime("%I")+':' +time.strftime("%M")+':'+time.strftime("%S")
         data = [Dist_Total, timeC]
         print (data)
-
+        
         with open(csvfile, "a")as output:
                 writer = csv.writer(output, delimiter=",", lineterminator = '\n')
                 writer.writerow(data)
