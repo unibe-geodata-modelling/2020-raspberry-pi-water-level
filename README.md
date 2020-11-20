@@ -1,18 +1,5 @@
 # 2020-raspberry-pi-water-level - Geodatenanalyse: Dateien und ihre Bedeutung
 
-Ordnernamen:
-Sensoren
-In diesem Ordner wird jeweils gearbeitet. Bevor man Änderungen an den Dokumenten vornimmt, sollte von diesem Ordner eine Kopie gemacht werden.
-
-Sensoren_safety_copy_20201113
-Erstellt von Saba/Delia, bevor sie am 13.11.2020 mit “Sensoren”  gearbeitet haben.
-
-Sensoren_safety_copy_20201112
-Erstellt von Elena, bevor sie am 12.11.2020 mit “Sensoren” gearbeitet hat.
-
-safety_copy
-Erstellt von Elena/Saba/Delia, bevor sie am 26.10.2020 mit “Sensoren” gearbeitet haben.
-
 Dateinamen:
 distance_ranger.csv
 In diesem File werden die Messungen des Ultrasonic Rangers (Grove) abgespeichert.
