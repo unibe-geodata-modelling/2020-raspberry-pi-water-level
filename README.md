@@ -10,18 +10,19 @@ Datei erstellt am 13.11.2020, Saba + Delia
 
 grove_ultrasonic_ranger_updated_graph_2.py
 An dieser Datei wird zurzeit gearbeitet. Sie enthält nebst dem Graph auch Anfänge für ein Code zu einem gleitenden Mittelwert (1-10, 2-11 etc.).
+Elena
 
 PC_Benewake_TFmini_LiDAR.py
 Das vom Internet. Original.
 
-PC_Benewake_TFmini_LiDAR_updated.py
+PC_Benewake_TFmini_LiDAR_updated.py Jonas
 works for measuring distances
 
 PC_Benewake_TFmini_LiDAR_updated_graph.py
-xx
+Elena + Jonas
 
 PC_Benewake_TFmini_LiDAR_updated_graph2.py
-xx
+Elena + Jonas
 
 Older or original files of ultrasonic distance ranger (Grove) and tfmini:
 
@@ -30,7 +31,7 @@ In diesem File werden die Messungen des Ultrasonic Rangers (Grove) abgespeichert
 
 grove_ultrasonic_ranger_updated.py
 Diese Datei funktioniert: Sie misst.
-Datei erstellt am xx.xx.2020, JJ
+Datei erstellt am xx.xx.2020, Jonas
 
 grove_ultrasonic_ranger_updated_2.py
 Diese Datei funktioniert: Sie misst.
@@ -38,6 +39,7 @@ Datei erstellt am 26.10.2020, Saba + Delia + Elena
 
 grove_ultrasonic_ranger_updated_graph.py
 Diese Datei funktioniert: Sie erstellt deinen Graph für den Ultrasonic Ranger (Grove).
+Elena
 
 distance_tfmini.csv
 In diesem File werden die Messungen des TFMini abgespeichert.
