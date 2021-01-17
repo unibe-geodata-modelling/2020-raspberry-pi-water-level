@@ -22,8 +22,8 @@ Prerequisites
 - Distance sensors:
   * TFMini - Micro LiDAR Module (https://www.sparkfun.com/products/14588?_ga=2.157876282.1489232396.1610894228-276429489.1610894228)
   * Grove - Ultrasonic Distance Sensor / Ultrasonic Ranger (https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html)
-- USB-TTL converter (optional)
 - Grove Base Hat for Raspberry Pi (optional) (https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi.html)
+- USB-TTL converter (optional)
 - Python Environment (e.g. PyCharm, Geany)
 - Packages:
   * serial
