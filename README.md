@@ -1,48 +1,85 @@
-# 2020-raspberry-pi-water-level - Geodatenanalyse: Explanation of file content
+# Distance Measurement with Raspberry Pi 4
+Measuring different distances to solid and water surfaces with two different distance sensors compatible with a Raspberry Pi 4.
 
-grove_ultrasonic_ranger.py
-Das vom Internet. Original.
+-------------------------------------------------------------------------------------------------------------------------------------
 
-grove_ultrasonic_ranger_updated_3.py
-This file is for distance measuring.
-Neu gegenüber v2: Messungen als int und als float auf gewünschte Anzahl Kommastellen gerundet.
-Datei erstellt am 13.11.2020, Saba + Delia
+GENERAL USAGE NOTES
+-------------------------------------------------------------------------------------------------------------------------------------
 
-grove_ultrasonic_ranger_updated_graph_2.py
-An dieser Datei wird zurzeit gearbeitet. Sie enthält nebst dem Graph auch Anfänge für ein Code zu einem gleitenden Mittelwert (1-10, 2-11 etc.).
-Elena
+- The first script (*sensor_measurement.py*) enables the usage of two distance senors with a Raspberry Pi 4 and saves data in .csv-files.
 
-PC_Benewake_TFmini_LiDAR.py
-Das vom Internet. Original.
+- The second script (*data_visualisation.py*) visualises the measured values of both sensors per distance for all .csv-files.
 
-PC_Benewake_TFmini_LiDAR_updated.py Jonas
-works for measuring distances
+- The script was developed as a "Geodata analysis and modelling" seminar work - University of Bern.
 
-PC_Benewake_TFmini_LiDAR_updated_graph.py
-Elena + Jonas
+- The readme contains the prerequisites one needs to run the code, the set up and contact informations to the developers.
 
-PC_Benewake_TFmini_LiDAR_updated_graph2.py
-Elena + Jonas
+-------------------------------------------------------------------------------------------------------------------------------------
 
-Older or original files of ultrasonic distance ranger (Grove) and tfmini:
+Prerequisites
+-------------------------------------------------------------------------------------------------------------------------------------
+- Raspberry Pi 4
+- Distance sensors:
+  * TFMini - Micro LiDAR Module (https://www.sparkfun.com/products/14588?_ga=2.157876282.1489232396.1610894228-276429489.1610894228)
+  * Grove - Ultrasonic Ranger (https://www.seeedstudio.com/Grove-Ultrasonic-Distance-Sensor.html)
+- USB-TTL converter (optional)
+- Grove Base Hat for Raspberry Pi (optional) (https://www.seeedstudio.com/Grove-Base-Hat-for-Raspberry-Pi.html)
+- Python Environment (e.g. PyCharm, Geany)
+- Packages:
+  * serial
+  * time
+  * csv
+  * sys
+  * os
+  * glob
+  * matplotlib
+  * statistics
+  * pandas
 
-distance_ranger.csv
-In diesem File werden die Messungen des Ultrasonic Rangers (Grove) abgespeichert.
+-------------------------------------------------------------------------------------------------------------------------------------
 
-grove_ultrasonic_ranger_updated.py
-Diese Datei funktioniert: Sie misst.
-Datei erstellt am xx.xx.2020, Jonas
+Sensor Setup
+-------------------------------------------------------------------------------------------------------------------------------------
 
-grove_ultrasonic_ranger_updated_2.py
-Diese Datei funktioniert: Sie misst.
-Datei erstellt am 26.10.2020, Saba + Delia + Elena
+TFMini
+1) Connect TFmini LiDAR to RPi using USB-TTL converter or UART port using GPIO.
+2) If you're using a USB-TTL converter: Check Serial Port, and edit the code accordingly (e.g. ser = serial.Serial('/dev/ttyUSB0',...)
 
-grove_ultrasonic_ranger_updated_graph.py
-Diese Datei funktioniert: Sie erstellt deinen Graph für den Ultrasonic Ranger (Grove).
-Elena
 
-distance_tfmini.csv
-In diesem File werden die Messungen des TFMini abgespeichert.
+Ultrasonic Ranger
+1) Connect Ultrasonic Ranger to RPi using Grove Base Hat for Raspberry Pi or UART port using GPIO.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Scripts
+-------------------------------------------------------------------------------------------------------------------------------------
+
+- *sensor_measurement.py*: Script for running both sensors simultainiously and saving data in .csv-file.
+- *data_visualisation.py*: Script for visualisimg all created .csv-files automatically.
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Execution
+-------------------------------------------------------------------------------------------------------------------------------------
+
+For measuring:
+1) Open *sensor_measurement.py* script in a Python-Environment
+2) Set filename: csvfile = "filename.csv"
+3) Run the script
+
+For visualsing the data:
+1) Open *data_visualisation.py* script in a Python-Environment
+2) Run the script
+
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Contact
+-------------------------------------------------------------------------------------------------------------------------------------
+Developers S. Baer, J. Chastonay, D. Reichenbach & E. Siegrist
+
+E-mail: jonas.chastonay@students.unibe.ch
+
+Copyright 2021 University of Bern. All rights reserved.
 
 
 
