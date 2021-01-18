@@ -5,9 +5,12 @@ import sys
 import os
 from grove.gpio import GPIO
 from grove.helper import SlotHelper
-print os.getcwd() 
-csvfile = "merge.csv"
+print os.getcwd()
 
+#set filename
+csvfile = "filename.csv"
+
+#set up Grove Ultrasonic Ranger - see also https://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/
 pin = 5
 
 usleep = lambda x: time.sleep(x / 1000000.0)
@@ -15,7 +18,11 @@ usleep = lambda x: time.sleep(x / 1000000.0)
 _TIMEOUT1 = 1000
 _TIMEOUT2 = 10000
 
+#set up TFMini
+#check serial port and edit code accordingly 
 ser = serial.Serial('/dev/ttyUSB0',115200,timeout = 1)
+
+#set up TFMini data output format for specific use - see also https://github.com/TFmini/TFmini README.md chapter 4.3 & 6.2
 ser.write(0x42)
 ser.write(0x57)
 ser.write(0x02)
@@ -25,6 +32,8 @@ ser.write(0x00)
 ser.write(0x01)
 ser.write(0x06)
 
+
+#measurement Grove Ultrasonic Ranger - see also https://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/
 class GroveUltrasonicRanger(object):
     def __init__(self, pin):
         self.dio = GPIO(pin)
@@ -73,40 +82,36 @@ class GroveUltrasonicRanger(object):
             if dist:
                 return dist
 
-
 Grove = GroveUltrasonicRanger
 
 sonar = GroveUltrasonicRanger(pin)
 
+#measurement TFMini
 while(True):
     start = time.time()
     break_2nd = False
     while(True):
         if break_2nd:
             break 
-    
         while(ser.in_waiting >= 9):
-            #print ("a")
             if(('Y' == ser.read()) and ('Y' == ser.read())):
                 Dist_L = ser.read()
                 Dist_H = ser.read()
                 Dist_Total = (ord(Dist_H) * 256) + (ord(Dist_L))
                 for i in range (0,5):
-                    ser.read()
-           #time.sleep(0.0005)
+                    ser.read()    
+
+            #data writing for both sensors
             timeC = time.strftime("%I")+':' +time.strftime("%M")+':'+time.strftime("%S")
             data = [Dist_Total,sonar.get_distance(), timeC]
-            #print (data)
             end = time.time()
-            # write data every 1 second(s)
-            #print(end - start)
+            #write data every 1 second(s)
             if end - start >= 1:
                 print("recorded")
+                
                 # write data in the csv file
-            
                 with open(csvfile, "a")as output:
                         writer = csv.writer(output, delimiter=",", lineterminator = '\n')
                         writer.writerow(data)
-                #time.sleep(0.5)
                 break_2nd = True
                 break
