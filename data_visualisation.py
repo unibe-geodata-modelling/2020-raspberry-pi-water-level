@@ -2,11 +2,10 @@ import os
 import csv
 import glob
 import matplotlib
-import statistics
 import pandas as pd
 from matplotlib import pyplot as plt
 
-#Save work directory to variable and get list of all .csv files in work directory
+#save work directory to variable and get list of all .csv files in work directory
 workdir = os.getcwd()
 print(workdir)
 extension = "csv"
@@ -19,7 +18,7 @@ for i in csvlist:
     filename = i
     file_root = (os.path.splitext(filename)[0])
     print(file_root)
-    imgpath = os.path.join(workdir,file_root + "." + "png")
+    imgpath = os.path.join(workdir,file_root + ".png")
     print (imgpath)
     
     #read data from csv to individual lists
@@ -29,6 +28,7 @@ for i in csvlist:
         dist_list_a = []
         dist_list_b = []
         time_list = []
+        #specify list range for contextual number of observations
         obs_list = list(range(1,61))
         for row in reader:
             if row[0] == "":
@@ -40,26 +40,26 @@ for i in csvlist:
             dist_list_b.append(b_dist)
             time_list.append(a_time)
 
-    # Shorten lists to desired number of observations (60)
+    #shorten lists to desired number of observations (60)
     del dist_list_a[60:]
     del dist_list_b[60:]
     del time_list[60:]
 
-    # Create dataframe from lists for graph
+    #create dataframe from lists for graph
     df = pd.DataFrame()
     df['Observation_Number'] = obs_list
     df['Time'] = time_list
     df['Distance_TFmini'] = dist_list_a
     df['Distance_Grove'] = dist_list_b
     
-    # Calculate moving average and add to dataframe
+    #calculate moving average and add to dataframe
     df['Moving_Average_Distance_TFmini'] = df ['Distance_TFmini'].rolling(window=5, min_periods=2, center=True).mean()
     df['Moving_Average_Distance_Grove'] = df ['Distance_Grove'].rolling(window=5, min_periods=2, center=True).mean()
 
-    #Plot Graph
+    #plot graph (alternative: plot 'Time' as opposed to 'Observation Number')
     graph = df.plot.line(x='Observation_Number', y=['Distance_TFmini', 'Moving_Average_Distance_TFmini', 'Distance_Grove', 'Moving_Average_Distance_Grove'])
     graph.set_xlabel('Observation Number')
     graph.set_ylabel('Distance [cm]')
     
-    #Save Graph as .png file using path created earlier
+    #save graph as .png file using path created earlier
     plt.savefig(imgpath,dpi = 400)
