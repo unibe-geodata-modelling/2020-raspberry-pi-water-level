@@ -68,7 +68,8 @@ For measuring:
 
 For visualsing the data:
 1) Open *data_visualisation.py* script in a Python-Environment
-2) Run the script
+2) Check if .csv-files are in same working directory as *data_visualisation.py*
+3) Run the script
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
@@ -80,6 +81,11 @@ E-mail: jonas.chastonay@students.unibe.ch
 
 Copyright 2021 University of Bern. All rights reserved.
 
+-------------------------------------------------------------------------------------------------------------------------------------
+
+Acknowledgement
+-------------------------------------------------------------------------------------------------------------------------------------
+Many thanks to Pascal Horton and Andreas Zischg for the interesting seminar and their support.
 
 
 
