@@ -10,7 +10,7 @@ GENERAL USAGE NOTES
 
 - The second script (*data_visualisation.py*) visualises the measured values of both sensors per distance for all .csv-files.
 
-- The script was developed as a "Geodata analysis and modelling" seminar work - University of Bern.
+- The scripts were developed as a "Geodata analysis and modelling" seminar work - University of Bern.
 
 - The readme contains the prerequisites one needs to run the code, the set up and contact informations to the developers.
 
