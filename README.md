@@ -53,8 +53,8 @@ Ultrasonic Ranger
 Scripts
 -------------------------------------------------------------------------------------------------------------------------------------
 
-- *sensor_measurement.py*: Script for running both sensors simultainiously and saving data in .csv-file.
-- *data_visualisation.py*: Script for visualisimg all created .csv-files automatically.
+- *sensor_measurement.py*: Script for running both sensors simultaneously and saving data in .csv-file.
+- *data_visualisation.py*: Script for visualising all created .csv-files automatically.
 
 -------------------------------------------------------------------------------------------------------------------------------------
 
