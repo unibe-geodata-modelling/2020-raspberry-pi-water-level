@@ -32,7 +32,6 @@ ser.write(0x00)
 ser.write(0x01)
 ser.write(0x06)
 
-
 #measurement Grove Ultrasonic Ranger - see also https://wiki.seeedstudio.com/Grove-Ultrasonic_Ranger/
 class GroveUltrasonicRanger(object):
     def __init__(self, pin):
